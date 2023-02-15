@@ -24,6 +24,8 @@ export const ToggleType = Object.freeze({
 
   WhiteRoads: 21,
 
+  MapStyle: 26,
+
   StreetViewDarkBlue: 40,
 
   /** Google Maps uses this style if terrain is enabled. */ 

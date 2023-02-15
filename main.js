@@ -38,6 +38,7 @@ const options = {
   highDpi: false,
   labelsAndIconsOnly: false,
   noLandUse: false,
+  mapStyle: null,
 }
 
 // TODO maybe use dict style instead of this
@@ -99,6 +100,15 @@ function createUrl(options) {
   if (options.noLandUse) {
     toggles.push(new Toggle(ToggleType.NoLandUse));
   }
+
+  if (options.mapStyle) {
+   toggles.push(new Toggle(ToggleType.MapStyle, [
+     new Message(2, [
+       new Field(1, "s", "styles"),
+       new Field(2, "z", options.mapStyle.trim()),
+     ])
+   ]));
+ }
 
   const message = buildMessage(options, layers, toggles);
   return endpoint + message.toString(true);
@@ -318,5 +328,10 @@ createCheckBox("streetview-container", "photo-paths", "Show photo paths (thin li
     refreshUrl();
   }
 );
+
+document.querySelector("#map-style").addEventListener("change", (e) => {
+  options.mapStyle = e.target.value;
+  refreshUrl();
+})
 
 // END UI CODE

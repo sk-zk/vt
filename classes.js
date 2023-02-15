@@ -22,11 +22,15 @@ export class Layer {
 }
 
 export class Toggle {
-  constructor(id) {
+  constructor(id, otherFields) {
     this.id = id;
+    this.otherFields = otherFields ? otherFields : [];
   }
 
   toMessage() {
-    return new Message(12, [new Field(1, "e", this.id)]);
+    return new Message(12, [
+      new Field(1, "e", this.id),
+      ...this.otherFields,
+    ]);
   }
 }
