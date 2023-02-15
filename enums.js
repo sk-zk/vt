@@ -34,8 +34,7 @@ export const ToggleType = Object.freeze({
   /** Enables the terrain overlay in conjunction with adding base layers 5 and 6. */
   Terrain: 67,
 
-  /** Enables the Street View overlay for the Satellite layer. */ 
-  StreetView: 68,
+  SomeSortOfOverlayThing: 68,
 });
 
 export const RasterType = Object.freeze({

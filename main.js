@@ -63,7 +63,7 @@ function createUrl(options) {
     ]);
     layers.push(svOverlayLayer);
     if (options.basemap !== LayerType.Road) {
-      toggles.push(new Toggle(ToggleType.StreetView));
+      toggles.push(new Toggle(ToggleType.SomeSortOfOverlayThing));
     }
   }
   if (options.terrainOverlay) {
@@ -272,7 +272,7 @@ createCheckBox("toggles-container", "no-labels", "No labels", options.noLabels,
     refreshUrl();
   }
 );
-createCheckBox("toggles-container", "sat-overlay", "Satellite overlay", options.satOverlay,
+createCheckBox("toggles-container", "sat-overlay", "Hybrid overlay", options.satOverlay,
   (checked) => {
     options.satOverlay = +checked;
     refreshUrl();
