@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Map tile URL builder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="/dist/main.css">
+</head>
+
+<body>
+  <div id="map"></div>
+  <div id="controls">
+    <h1>Map tile URL builder</h1>
+    <p>This page exposes some of the parameters of the /vt?pb= endpoint for Google Maps tiles. The chosen settings can be explored
+      on the map and an XYZ tile URL is generated below.
+    </p>
+    <div>
+      <h2>Tile URL:</h2>
+      <div id="url-container"><code id="url"></code></div>
+    </div>
+    <div id="raster-type-container"><h2>Format</h2></div>
+    <div id="base-layer-container"><h2>Base layer</h2></div>
+    <div id="overlays-container"><h2>Overlays</h2></div>
+    <div id="toggles-container"><h2>Toggles</h2></div>
+    <div id="streetview-container"><h2>Street View options</h2></div>
+  </div>
+  <script src="/dist/main.js" type="module"></script>
+</body>
+
+</html>
