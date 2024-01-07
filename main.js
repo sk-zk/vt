@@ -15,7 +15,7 @@ const options = {
   basemap: LayerType.Road,
   outputFormat: 0,
   rasterType: RasterType.PNG,
-  streetViewOverlay: true,
+  streetViewOverlay: false,
   svLayers: new Message(1, [
     new Message(1, [
       new Field(1, "e", 2),
@@ -39,6 +39,7 @@ const options = {
   labelsAndIconsOnly: false,
   noLandUse: false,
   mapStyle: null,
+  useOldStyle: false,
 }
 
 // TODO maybe use dict style instead of this
@@ -134,7 +135,7 @@ function buildMessage(options, layers, toggles) {
     new Message(3, [
       new Field(2, "s", options.language),
       new Field(3, "s", options.regionCode),
-      new Field(5, "e", 1105),
+      new Field(5, "e", options.useOldStyle ? 18 : 1105),
 
       ...toggles.map(x => x.toMessage()),
     ]),
@@ -270,6 +271,12 @@ createCheckBox("overlays-container", "traffic", "Live traffic", options.trafficO
   }
 );
 
+createCheckBox("toggles-container", "old-style", "Old style", options.useOldStyle,
+  (checked) => {
+    options.useOldStyle = +checked;
+    refreshUrl();
+  }
+);
 createCheckBox("toggles-container", "high-dpi", "2x scale (High DPI)", options.highDpi,
   (checked) => {
     options.highDpi = +checked;
