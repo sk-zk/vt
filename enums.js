@@ -31,8 +31,6 @@ export const ToggleType = Object.freeze({
   /** Google Maps uses this style if terrain is enabled. */ 
   WhiteAndGrayRoads: 63,
 
-  NoLandUse: 64,
-
   /** Enables the terrain overlay in conjunction with adding base layers 5 and 6. */
   Terrain: 67,
 
