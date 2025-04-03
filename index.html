@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Map tile URL builder</title>
+  <title>Google Maps Tile URL Builder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="dist/main.css">
 </head>
@@ -20,12 +20,13 @@
     </div>
     <div id="raster-type-container"><h2>Format</h2></div>
     <div id="base-layer-container"><h2>Base layer</h2></div>
+    <div id="style-container"><h2>Base layer style</h2>
+      Custom style (Only supports the final base64 string right now)<br>
+      <input type="text" name="map-style" id="map-style" value="">
+    </div>
     <div id="overlays-container"><h2>Overlays</h2></div>
     <div id="toggles-container"><h2>Toggles</h2></div>
     <div id="streetview-container"><h2>Street View options</h2></div>
-    <div id="style-container"><h2>Map style</h2>
-      (Only supports the final base64 string right now)<br>
-      <input type="text" name="map-style" id="map-style" value="">
     </div>
   </div>
   <script src="dist/main.js" type="module"></script>
